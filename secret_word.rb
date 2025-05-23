@@ -1,0 +1,2 @@
+class SecretWord
+end
