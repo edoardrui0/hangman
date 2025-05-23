@@ -38,6 +38,3 @@ class Player
     end
   end
 end
-
-# new = Player.new
-# new.player_input
