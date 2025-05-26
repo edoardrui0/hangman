@@ -9,7 +9,7 @@ class Player
 
   # get input, then check whether to save game or validate guess
   def player_input
-    input = gets.chomp
+    input = gets.chomp.downcase
     if input == 'save'
       @guess = input
     else

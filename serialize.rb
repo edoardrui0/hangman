@@ -3,7 +3,7 @@ module Serialize
   def load_game
     return unless File.exist?('saved_games')
 
-    puts "Here's a list of the saved games: #{Dir.children('saved_games')}"
+    puts "Here's a list of the saved games:"
     Dir.children('saved_games').each { |file| puts "- #{file}" }
     puts 'Please input a filename you wish to load i.e "filename.json"'
     filename = gets.chomp
