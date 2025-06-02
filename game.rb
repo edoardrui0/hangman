@@ -81,8 +81,8 @@ class Game
     player.misses << player.guess
     puts 'That letter is not found in the secret word'
     puts "Here are all your misses so far: #{player.misses}"
-    puts "You have #{life} lives left"
     @life -= 1
+    puts "You have #{life} lives left"
     puts @display.join(' ')
   end
 

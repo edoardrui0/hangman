@@ -12,8 +12,8 @@ module Serialize
 
   # Loads selected save file and parses it from JSON
   def from_json(filename)
-    f = JSON.parse(File.read("saved_games/#{filename}")) # might need to symbolize_names: true
-    @word = f[:word]
+    f = JSON.parse(File.read("saved_games/#{filename}"), symbolize_names: true) # might need to symbolize_names: true
+    @word.random_word = f[:word]
     @display = f[:display]
     @life = f[:life]
     @player.misses = f[:player_misses]
@@ -25,7 +25,7 @@ module Serialize
     Dir.mkdir('saved_games') unless File.exist?('saved_games')
     File.open("saved_games/#{filename}", 'w') do |f|
       JSON.dump({
-                  word: @word,
+                  word: @word.random_word,
                   display: @display,
                   life: @life,
                   player_misses: @player.misses,
