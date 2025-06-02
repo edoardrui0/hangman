@@ -104,6 +104,10 @@ class Game
     new_game
   end
 
+  def new_game
+    Game.new
+  end
+
   def play_game
     puts 'Welcome to Ruby Hangman!'
     puts 'Enter any letter for a guess or "save" to save the game'
@@ -111,11 +115,9 @@ class Game
       make_display
       match
       save_game
-      # p @display.join
-      # p @word.random_word
       check_winner
     end
-    # replay
+    replay
   end
 end
 
